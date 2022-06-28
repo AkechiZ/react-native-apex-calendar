@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25979dcf-ea4f-4b5b-887c-04a73b62520a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="2AyJZrTiOEK581v8STxb0AnqBJY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="D:\GitSpace\bzbiPadClient\node_modules\react-native-calendars\node_modules\prettier" />
+    <property name="ts.external.directory.path" value="D:\IDE\WebStorm 2020.1.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25979dcf-ea4f-4b5b-887c-04a73b62520a" name="Default Changelist" comment="" />
+      <created>1655975949342</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655975949342</updated>
+      <workItem from="1655975950971" duration="34000" />
+      <workItem from="1656032858115" duration="1393000" />
+      <workItem from="1656035039344" duration="19297000" />
+      <workItem from="1656293366192" duration="15050000" />
+      <workItem from="1656385340068" duration="4158000" />
+      <workItem from="1656397499383" duration="604000" />
+      <workItem from="1656399280642" duration="3757000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/index.d.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="452" y="-969" key="#ESLint" timestamp="1656032903227">
+      <screen x="-301" y="-1440" width="2048" height="1112" />
+    </state>
+    <state x="452" y="-969" key="#ESLint/0.0.1536.824/-301.-1440.2048.1112@-301.-1440.2048.1112" timestamp="1656032903227" />
+    <state x="292" y="-1128" key="FileChooserDialogImpl" timestamp="1656294045493">
+      <screen x="-301" y="-1440" width="2048" height="1112" />
+    </state>
+    <state x="292" y="-1128" key="FileChooserDialogImpl/0.0.1536.824/-301.-1440.2048.1112@-301.-1440.2048.1112" timestamp="1656294045493" />
+    <state x="150" y="-1217" width="1112" height="694" key="find.popup" timestamp="1656313810656">
+      <screen x="-301" y="-1440" width="2048" height="1112" />
+    </state>
+    <state x="150" y="-1217" width="1112" height="694" key="find.popup/0.0.1536.824/-301.-1440.2048.1112@-301.-1440.2048.1112" timestamp="1656313810656" />
+    <state x="168" y="-458" key="run.anything.popup" timestamp="1656042606048">
+      <screen x="-301" y="-1440" width="2048" height="1112" />
+    </state>
+    <state x="168" y="-458" key="run.anything.popup/0.0.1536.824/-301.-1440.2048.1112@-301.-1440.2048.1112" timestamp="1656042606048" />
+    <state x="174" y="-1192" width="672" height="678" key="search.everywhere.popup" timestamp="1656314219623">
+      <screen x="-301" y="-1440" width="2048" height="1112" />
+    </state>
+    <state x="174" y="-1192" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-301.-1440.2048.1112@-301.-1440.2048.1112" timestamp="1656314219623" />
+  </component>
+</project>
