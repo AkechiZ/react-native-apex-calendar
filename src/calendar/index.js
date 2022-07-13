@@ -5,9 +5,9 @@ import { View } from 'react-native';
 // @ts-expect-error
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
 import constants from '../commons/constants';
-import { page, isGTE, isLTE, sameMonth,yearNums,monthNums } from '../dateutils';
+import { page, isGTE, isLTE, sameMonth,yearNums,monthNums,isMonthNotInTheRange,isYearNotInTheRange } from '../dateutils';
 import { xdateToData, parseDate, toMarkingFormat } from '../interface';
-import { getState,getyearState } from '../day-state-manager';
+import { getState,getyearState,getMonthState } from '../day-state-manager';
 import { extractComponentProps } from '../componentUpdater';
 // @ts-expect-error
 import { WEEK_NUMBER } from '../testIDs';
@@ -64,15 +64,25 @@ const Calendar = (props) => {
         const day = parseDate(date);
         const min = parseDate(minDate);
         const max = parseDate(maxDate);
-        if (allowSelectionOutOfRange || !(min && !isGTE(day, min)) && !(max && !isLTE(day, max))) {
+
+        let isRequire = false
+        if(showType === 'year'){
+            isRequire = allowSelectionOutOfRange || !(isYearNotInTheRange(min,max,day))
+        }else if(showType === 'month'){
+            isRequire = allowSelectionOutOfRange || !(isMonthNotInTheRange(min,max,day))
+        }else if(showType === 'date'){
+            isRequire = allowSelectionOutOfRange || !(min && !isGTE(day, min)) && !(max && !isLTE(day, max))
+        }
+
+        if (isRequire) {
             if (!disableMonthChange) {
                 updateMonth(day);
             }
             if (interaction) {
                 interaction(date);
             }
+            setCurrentYear(day)
         }
-        setCurrentYear(day)
     }, [minDate, maxDate, allowSelectionOutOfRange, disableMonthChange, updateMonth]);
     const onPressDay = useCallback((date) => {
         if (date)
@@ -106,12 +116,12 @@ const Calendar = (props) => {
     }, [onSwipeLeft, onSwipeRight]);
     const renderWeekNumber = (weekNumber) => {
         return (<View style={style.current.dayContainer} key={`week-container-${weekNumber}`}>
-        <BasicDay key={`week-${weekNumber}`} marking={{ disabled: true, disableTouchEvent: true }}
-        // state='disabled'
-        theme={theme} testID={`${WEEK_NUMBER}-${weekNumber}`}>
-          {weekNumber}
-        </BasicDay>
-      </View>);
+            <BasicDay key={`week-${weekNumber}`} marking={{ disabled: true, disableTouchEvent: true }}
+                // state='disabled'
+                      theme={theme} testID={`${WEEK_NUMBER}-${weekNumber}`}>
+                {weekNumber}
+            </BasicDay>
+        </View>);
     };
     const renderDay = (day, id) => {
         const dayProps = extractComponentProps(Day, props);
@@ -123,14 +133,14 @@ const Calendar = (props) => {
         if(showType === 'date'){
             state = getState(day, currentMonth, props)
         }else if(showType === 'month'){
-            state = ''
+            state = getMonthState(day, currentMonth, props)
         }else if(showType === 'year'){
             state = getyearState(day, currentMonth, props)
         }
 
         return (<View style={style.current.dayContainer} key={id}>
-        <Day {...dayProps} date={toMarkingFormat(day)} state={state} marking={markedDates?.[toMarkingFormat(day)]} onPress={onPressDay} onLongPress={onLongPressDay} showType={showType}/>
-      </View>);
+            <Day {...dayProps} date={toMarkingFormat(day)} state={state} marking={markedDates?.[toMarkingFormat(day)]} onPress={onPressDay} onLongPress={onLongPressDay} showType={showType}/>
+        </View>);
     };
     const renderWeek = (days, id) => {
         const week = [];
@@ -141,8 +151,8 @@ const Calendar = (props) => {
             week.unshift(renderWeekNumber(days[days.length - 1].getWeek()));
         }
         return (<View style={style.current.week} key={id}>
-        {week}
-      </View>);
+            {week}
+        </View>);
     };
 
     const renderMonth = () => {
@@ -203,12 +213,12 @@ const Calendar = (props) => {
     }
 
     return (<GestureComponent {...gestureProps}>
-      <View style={[style.current.container, propsStyle]} accessibilityElementsHidden={accessibilityElementsHidden} // iOS
-     importantForAccessibility={importantForAccessibility} // Android
-    >
-        {renderHeader()}
-        {main}
-      </View>
+        <View style={[style.current.container, propsStyle]} accessibilityElementsHidden={accessibilityElementsHidden} // iOS
+              importantForAccessibility={importantForAccessibility} // Android
+        >
+            {renderHeader()}
+            {main}
+        </View>
     </GestureComponent>);
 };
 export default Calendar;

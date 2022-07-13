@@ -52,6 +52,14 @@ export function isGTE(a, b) {
 export function isLTE(a, b) {
     return a.diffDays(b) > -1;
 }
+
+export function isGTEYear(a, b) {
+    return b.diffYears(a) > -1;
+}
+export function isLTEYear(a, b) {
+    return a.diffYears(b) > -1;
+}
+
 export function formatNumbers(date) {
     const numbers = getDefaultLocale().numbers;
     return numbers ? date.toString().replace(latinNumbersPattern, (char) => numbers[+char]) : date;
@@ -112,6 +120,37 @@ export function page(date, firstDayOfWeek = 0, showSixWeeks = false) {
 export function isDateNotInTheRange(minDate, maxDate, date) {
     return (minDate && !isGTE(date, minDate)) || (maxDate && !isLTE(date, maxDate));
 }
+
+export function isYearNotInTheRange(minDate, maxDate, date) {
+    let flag = false;
+    if(minDate){
+        flag = minDate.getFullYear() > date.getFullYear()
+    }
+    if(maxDate){
+        flag = maxDate.getFullYear() < date.getFullYear()
+    }
+    return flag
+}
+
+export function isMonthNotInTheRange(minDate, maxDate, date) {
+    let flag = false;
+    if(minDate){
+        if(date.getFullYear() > minDate.getFullYear()){
+            flag = false;
+        }else if(date.getFullYear() === minDate.getFullYear()){
+            flag = date.getMonth() < minDate.getMonth()
+        }
+    }
+    if(maxDate){
+        if(date.getFullYear() < maxDate.getFullYear()){
+            flag = false
+        }else if(date.getFullYear() === maxDate.getFullYear()){
+            flag = date.getMonth() > maxDate.getMonth()
+        }
+    }
+    return flag
+}
+
 export function getWeekDates(date, firstDay = 0, format) {
     if (date && parseDate(date).valid()) {
         const current = parseDate(date);
@@ -179,4 +218,8 @@ export function monthNums(currentMonth) {
 
 export function isThisYear(year){
     return year.getFullYear() === new XDate().getFullYear()
+}
+
+export function isThisMonth(month){
+    return month.getMonth() === new XDate().getMonth()
 }

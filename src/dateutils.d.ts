@@ -19,5 +19,7 @@ export declare function generateDay(originDate: string, daysOffset?: number): an
 export declare function yearNums(date: XDate): import("xdate")[];
 export declare function monthNums(date: XDate): import("xdate")[];
 export declare function isThisYear(date: XDate): import("xdate")[];
+export declare function isThisMonth(date: XDate): import("xdate")[];
 export declare function calcYearRange(date: XDate): import("xdate")[];
-
+export declare function isYearNotInTheRange(minDate: XDate, maxDate: XDate, date: XDate): boolean;
+export declare function isMonthNotInTheRange(minDate: XDate, maxDate: XDate, date: XDate): boolean;
