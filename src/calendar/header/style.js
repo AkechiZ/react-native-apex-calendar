@@ -32,9 +32,11 @@ export default function (theme = {}) {
         },
         arrowImage: {
             ...flipStyle,
-            tintColor: appStyle.arrowColor,
-            marginLeft: 20,
-            marginRight: 20,
+            // tintColor: appStyle.disabledArrowColor,
+            marginLeft: 5,
+            marginRight: 5,
+            width:30,
+            height: 30,
             ...Platform.select({
                 web: {
                     width: appStyle.arrowWidth,
