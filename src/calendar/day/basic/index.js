@@ -41,6 +41,10 @@ const BasicDay = (props) => {
                 styles.push({ backgroundColor: selectedColor });
             }
         }
+        else if(isDisabled){
+            console.log(style.current.selected)
+            styles.push(style.current.disabledTextContainer);
+        }
 
         else if (isToday) {
             styles.push(style.current.today);
@@ -54,9 +58,9 @@ const BasicDay = (props) => {
         }
         //apex style调整
         if(showType === 'year'){
-            styles.push({marginTop:10,marginBottm:10})
+            styles.push({marginTop:10})
         }else if(showType === 'month'){
-            styles.push({marginTop:40,marginBottm:40})
+            styles.push({marginTop:40,})
         }
 
         return styles;

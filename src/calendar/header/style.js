@@ -11,7 +11,9 @@ export default function (theme = {}) {
             paddingLeft: 10,
             paddingRight: 10,
             marginTop: 6,
-            alignItems: 'center'
+            alignItems: 'center',
+            borderColor:'#DDDDDD',
+            borderBottomWidth:1
         },
         headerContainer: {
             flexDirection: 'row'

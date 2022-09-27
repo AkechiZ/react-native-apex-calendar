@@ -125,12 +125,12 @@ const CalendarHeader = forwardRef((props, ref) => {
         if(showType === 'date'){
             view =
                 <View style={style.current.arrowDir}>
-                    <TouchableOpacity onPress={!shouldDisable ? (isLeft?onPressYear:onPress) : undefined} disabled={shouldDisable} style={style.current.arrow} hitSlop={{ left: 20, right: 20, top: 20, bottom: 20 }} testID={testId}>
+                    <TouchableOpacity onPress={!shouldDisable ? (isLeft?onPressYear:onPress) : undefined} disabled={shouldDisable} style={style.current.arrow}  testID={testId}>
                         {renderArrow ? (renderArrow(renderArrowDirection)) : (
                             // @ts-expect-error style?: StyleProp<ImageStyle>
                             <Image source={isLeft? imageYearLeft: imageRight} style={shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage}/>)}
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={!shouldDisable ? (isLeft?onPress:onPressYear) : undefined} disabled={shouldDisable} style={style.current.arrow} hitSlop={{ left: 20, right: 20, top: 20, bottom: 20 }} testID={testId}>
+                    <TouchableOpacity onPress={!shouldDisable ? (isLeft?onPress:onPressYear) : undefined} disabled={shouldDisable} style={style.current.arrow}  testID={testId}>
                         {renderArrow ? (renderArrow(renderArrowDirection)) : (
                             // @ts-expect-error style?: StyleProp<ImageStyle>
                             <Image source={isLeft? imageLeft: imageYearRight} style={shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage}/>)}
@@ -139,7 +139,7 @@ const CalendarHeader = forwardRef((props, ref) => {
         }else{
             let pressFunc = showType === 'year'?addYearRange:onPressYear;
             view =
-                <TouchableOpacity onPress={!shouldDisable ? (pressFunc) : undefined} disabled={shouldDisable} style={style.current.arrow} hitSlop={{ left: 20, right: 20, top: 20, bottom: 20 }} testID={testId}>
+                <TouchableOpacity onPress={!shouldDisable ? (pressFunc) : undefined} disabled={shouldDisable} style={style.current.arrow}  testID={testId}>
                     {renderArrow ? (renderArrow(renderArrowDirection)) : (
                         // @ts-expect-error style?: StyleProp<ImageStyle>
                         <Image source={isLeft? imageLeft: imageRight} style={shouldDisable ? style.current.disabledArrowImage : style.current.arrowImage}/>)}

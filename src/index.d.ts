@@ -20,4 +20,6 @@ export { default as TimelineList } from './timeline-list';
 export type { TimelineListProps, TimelineListRenderItemInfo } from './timeline-list';
 export { default as CalendarUtils } from './services';
 export type { DateData, AgendaEntry, AgendaSchedule } from './types';
-export { default as LocaleConfig } from 'xdate';
+export {default as LocaleConfig} from 'xdate';
+export { default as ApexCalendar } from './ApexCalendar/index';
+export type { ApexCalendarProps } from './ApexCalendar';

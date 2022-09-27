@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import * as defaultStyle from '../../../style';
 import constants from '../../../commons/constants';
+import {textDisabledColor} from "../../../style";
 export default function styleConstructor(theme = {}) {
     const appStyle = { ...defaultStyle, ...theme };
     return StyleSheet.create({
@@ -10,11 +11,12 @@ export default function styleConstructor(theme = {}) {
         },
         base: {
             width: 40,
-            height: 32,
-            alignItems: 'center'
+            height: 40,
+            alignItems: 'center',
+            borderRadius:4
         },
         text: {
-            marginTop: constants.isAndroid ? 4 : 6,
+            marginTop: constants.isAndroid ? 4 : 10,
             fontSize: appStyle.textDayFontSize,
             fontFamily: appStyle.textDayFontFamily,
             fontWeight: appStyle.textDayFontWeight,
@@ -29,6 +31,10 @@ export default function styleConstructor(theme = {}) {
             backgroundColor: appStyle.selectedDayBackgroundColor,
 
         },
+        disabledTextContainer: {
+            backgroundColor: '#F2F2F2',
+
+        },
         today: {
             backgroundColor: appStyle.todayBackgroundColor,
             borderRadius: 16
@@ -40,7 +46,8 @@ export default function styleConstructor(theme = {}) {
             color: appStyle.selectedDayTextColor
         },
         disabledText: {
-            color: appStyle.textDisabledColor
+            color: appStyle.textDisabledColor,
+
         },
         inactiveText: {
             color: appStyle.textInactiveColor
