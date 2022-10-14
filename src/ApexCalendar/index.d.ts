@@ -2,7 +2,7 @@
 import React, { ReactNode } from 'react';
 
 export interface ApexCalendarProps {
-    pressCallback:()=>void;
+    pressCallback:(day)=>void;
     minDate:string
     maxDate:string
     initialDate:string
