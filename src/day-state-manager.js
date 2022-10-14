@@ -1,3 +1,5 @@
+import {isThisMonth} from "./dateutils";
+
 const { isToday, isDateNotInTheRange,isYearNotInTheRange, isMonthNotInTheRange,sameMonth,isThisYear } = require('./dateutils');
 const { parseDate, toMarkingFormat } = require('./interface');
 export function getState(day, current, props) {
@@ -31,7 +33,7 @@ export function getMonthState(day,current,props) {
     if (context?.date === toMarkingFormat(day)) {
         state = 'selected';
     }
-    else if (isThisYear(day)) {
+    else if (isThisMonth(day)) {
         state = 'today';
     }
     if (disabledByDefault) {

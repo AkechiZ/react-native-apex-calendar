@@ -11,4 +11,3 @@ export { default as Timeline } from './timeline/Timeline';
 export { default as TimelineList } from './timeline-list';
 export { default as CalendarUtils } from './services';
 export {default as LocaleConfig} from 'xdate';
-export { default as ApexCalendar } from './ApexCalendar';

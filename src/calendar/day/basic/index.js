@@ -42,7 +42,6 @@ const BasicDay = (props) => {
             }
         }
         else if(isDisabled){
-            console.log(style.current.selected)
             styles.push(style.current.disabledTextContainer);
         }
 
